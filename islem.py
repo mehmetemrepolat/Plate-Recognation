@@ -1,4 +1,3 @@
-import fonksiyonlar as fonk
 
 def goruntu():
 
