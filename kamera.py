@@ -1,5 +1,4 @@
 def hazir_goruntu():
-
     import numpy as np
     import cv2
     import pytesseract
@@ -7,7 +6,6 @@ def hazir_goruntu():
 
     goruntu = cv2.imread(f"Resim/{input('Resim adını Giriniz: ')}")
     img = goruntu
-
     cv2.imshow('Goruntu', img)
 
     # Çerçeveler halinde görüntü yakalar
@@ -61,9 +59,7 @@ def hazir_goruntu():
         print(f"Plaka:{pytesseract.image_to_string(dilated_image)}")
     else:
         cv2.imshow('Görüntü', img)
-
     cv2.waitKey(0)
-
     cv2.destroyAllWindows()
 
 

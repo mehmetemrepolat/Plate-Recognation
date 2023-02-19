@@ -22,6 +22,7 @@ cv2.setMouseCallback('Goruntu', select_roi)
 # Nesne takip işlevi
 def track_object(frame, x, y, w, h):
     roi = frame[y:y+h, x:x+w]
+
     hsv_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
     # Renk histogramını hesaplama
@@ -33,6 +34,7 @@ def track_object(frame, x, y, w, h):
 
     while True:
         ret, frame = cap.read()
+
         if not ret:
             break
 
@@ -44,6 +46,7 @@ def track_object(frame, x, y, w, h):
         pts = cv2.boxPoints(ret)
         pts = np.int0(pts)
         img = cv2.polylines(frame, [pts], True, (0, 255, 0), 2)
+
 
         cv2.imshow('Goruntu', img)
 
